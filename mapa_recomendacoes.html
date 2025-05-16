@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_74a13842af5dbd9efe8d518e8615fd3f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_74a13842af5dbd9efe8d518e8615fd3f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_74a13842af5dbd9efe8d518e8615fd3f = L.map(
+                "map_74a13842af5dbd9efe8d518e8615fd3f",
+                {
+                    center: [42.0, -91.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6b4acc004029ff2708efdcd76551a668 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6b4acc004029ff2708efdcd76551a668.addTo(map_74a13842af5dbd9efe8d518e8615fd3f);
+        
+    
+            var marker_07e9712ab628b75b406b44a0312ad66e = L.marker(
+                [42.0, -91.0],
+                {
+}
+            ).addTo(map_74a13842af5dbd9efe8d518e8615fd3f);
+        
+    
+            var icon_e9e3db09478c4b4c27a06b6e71c22c59 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_07e9712ab628b75b406b44a0312ad66e.bindTooltip(
+                `<div>
+                     Sua localização
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_07e9712ab628b75b406b44a0312ad66e.setIcon(icon_e9e3db09478c4b4c27a06b6e71c22c59);
+            
+    
+            var marker_506f711a63afe454bf2fc521f9580f79 = L.marker(
+                [41.8254354, -90.538278],
+                {
+}
+            ).addTo(map_74a13842af5dbd9efe8d518e8615fd3f);
+        
+    
+            var icon_66e259a6e0a1daf2142574078f218b5d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e081043e8cf97501d63ace8cc3ac3110 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f8dd480d04e23e4640e4c407eb304022 = $(`<div id="html_f8dd480d04e23e4640e4c407eb304022" style="width: 100.0%; height: 100.0%;">DeWitt Community Center_x000d_ 512 10th Street_x000d_ DeWitt, Iowa<br>Distância: 42.9 km<br>Avaliação: 4.8</div>`)[0];
+                popup_e081043e8cf97501d63ace8cc3ac3110.setContent(html_f8dd480d04e23e4640e4c407eb304022);
+            
+        
+
+        marker_506f711a63afe454bf2fc521f9580f79.bindPopup(popup_e081043e8cf97501d63ace8cc3ac3110)
+        ;
+
+        
+    
+    
+            marker_506f711a63afe454bf2fc521f9580f79.bindTooltip(
+                `<div>
+                     DeWitt Community Center_x000d_
+512 10th Street_x000d_
+DeWitt, Iowa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_506f711a63afe454bf2fc521f9580f79.setIcon(icon_66e259a6e0a1daf2142574078f218b5d);
+            
+    
+            var marker_37bb3c51b18246159ab79216bb650fef = L.marker(
+                [42.404443, -90.31353],
+                {
+}
+            ).addTo(map_74a13842af5dbd9efe8d518e8615fd3f);
+        
+    
+            var icon_4245c368d8607c49bc15f5fe292207ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ec6b39b872cde56720381496f769244 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f11fb259e7b9bdc6ac67e90f9814a69e = $(`<div id="html_f11fb259e7b9bdc6ac67e90f9814a69e" style="width: 100.0%; height: 100.0%;">Parking lot at The Galena Territory Association Owners' Club facility.<br>Distância: 72.3 km<br>Avaliação: 4.8</div>`)[0];
+                popup_0ec6b39b872cde56720381496f769244.setContent(html_f11fb259e7b9bdc6ac67e90f9814a69e);
+            
+        
+
+        marker_37bb3c51b18246159ab79216bb650fef.bindPopup(popup_0ec6b39b872cde56720381496f769244)
+        ;
+
+        
+    
+    
+            marker_37bb3c51b18246159ab79216bb650fef.bindTooltip(
+                `<div>
+                     Parking lot at The Galena Territory Association Owners' Club facility.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_37bb3c51b18246159ab79216bb650fef.setIcon(icon_4245c368d8607c49bc15f5fe292207ac);
+            
+    
+            var marker_94cc72644e14d98b0a41da40a46d9b1a = L.marker(
+                [41.519748, -90.582083],
+                {
+}
+            ).addTo(map_74a13842af5dbd9efe8d518e8615fd3f);
+        
+    
+            var icon_55ed39eb0a225ba5c87d84e8d6768627 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_60713ded9cd89b1a96c89eb29a426baa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e0d1f8c4a35dc7f68035f0fb1b3bda55 = $(`<div id="html_e0d1f8c4a35dc7f68035f0fb1b3bda55" style="width: 100.0%; height: 100.0%;">The Davenport Freight House Farmers Market is located along the scenic Mississippi Riverfront, anchored by the historic Freight House Building in lovely downtown Davenport, Iowa.<br>Distância: 63.7 km<br>Avaliação: 4.6</div>`)[0];
+                popup_60713ded9cd89b1a96c89eb29a426baa.setContent(html_e0d1f8c4a35dc7f68035f0fb1b3bda55);
+            
+        
+
+        marker_94cc72644e14d98b0a41da40a46d9b1a.bindPopup(popup_60713ded9cd89b1a96c89eb29a426baa)
+        ;
+
+        
+    
+    
+            marker_94cc72644e14d98b0a41da40a46d9b1a.bindTooltip(
+                `<div>
+                     The Davenport Freight House Farmers Market is located along the scenic Mississippi Riverfront, anchored by the historic Freight House Building in lovely downtown Davenport, Iowa.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_94cc72644e14d98b0a41da40a46d9b1a.setIcon(icon_55ed39eb0a225ba5c87d84e8d6768627);
+            
+    
+            var marker_965921ea5108e6d8c6ef00298aebb0f3 = L.marker(
+                [42.102271, -89.832636],
+                {
+}
+            ).addTo(map_74a13842af5dbd9efe8d518e8615fd3f);
+        
+    
+            var icon_e7ece993b932ee1bed562551ec8ef97d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0895929bf2021e707d7054b86b5c4d4c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_62fb316ef8cd9895e5fc67ee57b0c273 = $(`<div id="html_62fb316ef8cd9895e5fc67ee57b0c273" style="width: 100.0%; height: 100.0%;">Northeast Corner of Broad St & Locust St on the gravel lot<br>Distância: 97.3 km<br>Avaliação: 4.1</div>`)[0];
+                popup_0895929bf2021e707d7054b86b5c4d4c.setContent(html_62fb316ef8cd9895e5fc67ee57b0c273);
+            
+        
+
+        marker_965921ea5108e6d8c6ef00298aebb0f3.bindPopup(popup_0895929bf2021e707d7054b86b5c4d4c)
+        ;
+
+        
+    
+    
+            marker_965921ea5108e6d8c6ef00298aebb0f3.bindTooltip(
+                `<div>
+                     Northeast Corner of Broad St & Locust St on the gravel lot
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_965921ea5108e6d8c6ef00298aebb0f3.setIcon(icon_e7ece993b932ee1bed562551ec8ef97d);
+            
+    
+            var marker_b39c0f53ad581e23bd34c4ee3ba96c9d = L.marker(
+                [42.044309, -91.580645],
+                {
+}
+            ).addTo(map_74a13842af5dbd9efe8d518e8615fd3f);
+        
+    
+            var icon_240fb813cf595b8f7e3168694c2f94ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3075738b157bbd0e2baeb4faf328a842 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9ae20e09a0c4faaf2a2891e799c96426 = $(`<div id="html_9ae20e09a0c4faaf2a2891e799c96426" style="width: 100.0%; height: 100.0%;">On the corner of McGowan Blvd and 31st Street<br>Distância: 48.3 km<br>Avaliação: 3.9</div>`)[0];
+                popup_3075738b157bbd0e2baeb4faf328a842.setContent(html_9ae20e09a0c4faaf2a2891e799c96426);
+            
+        
+
+        marker_b39c0f53ad581e23bd34c4ee3ba96c9d.bindPopup(popup_3075738b157bbd0e2baeb4faf328a842)
+        ;
+
+        
+    
+    
+            marker_b39c0f53ad581e23bd34c4ee3ba96c9d.bindTooltip(
+                `<div>
+                     On the corner of McGowan Blvd and 31st Street
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b39c0f53ad581e23bd34c4ee3ba96c9d.setIcon(icon_240fb813cf595b8f7e3168694c2f94ab);
+            
+    
+            var marker_4ca6f6442f83a8a07feea29bc55ed7e4 = L.marker(
+                [41.562863, -90.571154],
+                {
+}
+            ).addTo(map_74a13842af5dbd9efe8d518e8615fd3f);
+        
+    
+            var icon_955ea5604b37d23594eda84a96bd6e96 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_101a8b7280f9c6c7194d62b8e0a1af56 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3abb9f7e8b003390d49987ecea77f2b6 = $(`<div id="html_3abb9f7e8b003390d49987ecea77f2b6" style="width: 100.0%; height: 100.0%;">mall parking lot in front of Pennies East entrance<br>Distância: 60.2 km<br>Avaliação: 3.6</div>`)[0];
+                popup_101a8b7280f9c6c7194d62b8e0a1af56.setContent(html_3abb9f7e8b003390d49987ecea77f2b6);
+            
+        
+
+        marker_4ca6f6442f83a8a07feea29bc55ed7e4.bindPopup(popup_101a8b7280f9c6c7194d62b8e0a1af56)
+        ;
+
+        
+    
+    
+            marker_4ca6f6442f83a8a07feea29bc55ed7e4.bindTooltip(
+                `<div>
+                     mall parking lot in front of Pennies East entrance
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4ca6f6442f83a8a07feea29bc55ed7e4.setIcon(icon_955ea5604b37d23594eda84a96bd6e96);
+            
+    
+            var marker_26715c4fbfc18952c5dac9cd1a0719a8 = L.marker(
+                [41.8254354, -90.538278],
+                {
+}
+            ).addTo(map_74a13842af5dbd9efe8d518e8615fd3f);
+        
+    
+            var icon_b3f7845c4ac8d9873996f0970334a518 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4f686af270c3595c0453a0771e3e703d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3a339b29b74539a8b7fd67342dcba15f = $(`<div id="html_3a339b29b74539a8b7fd67342dcba15f" style="width: 100.0%; height: 100.0%;">Lincoln Park, DeWitt, Iowa<br>Distância: 42.9 km<br>Avaliação: 3.4</div>`)[0];
+                popup_4f686af270c3595c0453a0771e3e703d.setContent(html_3a339b29b74539a8b7fd67342dcba15f);
+            
+        
+
+        marker_26715c4fbfc18952c5dac9cd1a0719a8.bindPopup(popup_4f686af270c3595c0453a0771e3e703d)
+        ;
+
+        
+    
+    
+            marker_26715c4fbfc18952c5dac9cd1a0719a8.bindTooltip(
+                `<div>
+                     Lincoln Park, DeWitt, Iowa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_26715c4fbfc18952c5dac9cd1a0719a8.setIcon(icon_b3f7845c4ac8d9873996f0970334a518);
+            
+    
+            var marker_5b178117de73fc1edb7618d0d66febc6 = L.marker(
+                [41.51278, -90.576384],
+                {
+}
+            ).addTo(map_74a13842af5dbd9efe8d518e8615fd3f);
+        
+    
+            var icon_dca3040105bc7dec350cec00cd7c47b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d19a1908c0850d9f803c6a7e3acb7b4c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f96ac71714df4fe136c538326be06542 = $(`<div id="html_f96ac71714df4fe136c538326be06542" style="width: 100.0%; height: 100.0%;">In the west lot of Schwiebert Park, Rock Island<br>Distância: 64.6 km<br>Avaliação: 3.4</div>`)[0];
+                popup_d19a1908c0850d9f803c6a7e3acb7b4c.setContent(html_f96ac71714df4fe136c538326be06542);
+            
+        
+
+        marker_5b178117de73fc1edb7618d0d66febc6.bindPopup(popup_d19a1908c0850d9f803c6a7e3acb7b4c)
+        ;
+
+        
+    
+    
+            marker_5b178117de73fc1edb7618d0d66febc6.bindTooltip(
+                `<div>
+                     In the west lot of Schwiebert Park, Rock Island
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5b178117de73fc1edb7618d0d66febc6.setIcon(icon_dca3040105bc7dec350cec00cd7c47b5);
+            
+    
+            var marker_2dc49662ccd0a30f6eec76730df53abc = L.marker(
+                [42.504521, -90.667851],
+                {
+}
+            ).addTo(map_74a13842af5dbd9efe8d518e8615fd3f);
+        
+    
+            var icon_6674100dba5a5c5e7a60b57608aa72bd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_212f5e9cdc01eb433b816539a673bf0c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_27fa9f06992917119d3724b9f876d0e3 = $(`<div id="html_27fa9f06992917119d3724b9f876d0e3" style="width: 100.0%; height: 100.0%;">The Dubuque Farmers Market is located on Iowa Street, from 10th Street to just past 13th Street; between Central Avenue and Main Street; and includes the parking lot with electrical capacity, south of City Hall on Central Avenue.<br>Distância: 62.4 km<br>Avaliação: 3.3</div>`)[0];
+                popup_212f5e9cdc01eb433b816539a673bf0c.setContent(html_27fa9f06992917119d3724b9f876d0e3);
+            
+        
+
+        marker_2dc49662ccd0a30f6eec76730df53abc.bindPopup(popup_212f5e9cdc01eb433b816539a673bf0c)
+        ;
+
+        
+    
+    
+            marker_2dc49662ccd0a30f6eec76730df53abc.bindTooltip(
+                `<div>
+                     The Dubuque Farmers Market is located on Iowa Street, from 10th Street to just past 13th Street; between Central Avenue and Main Street; and includes the parking lot with electrical capacity, south of City Hall on Central Avenue.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2dc49662ccd0a30f6eec76730df53abc.setIcon(icon_6674100dba5a5c5e7a60b57608aa72bd);
+            
+    
+            var marker_77dbe467fd2d595382c9e951f4610022 = L.marker(
+                [42.101295, -89.978008],
+                {
+}
+            ).addTo(map_74a13842af5dbd9efe8d518e8615fd3f);
+        
+    
+            var icon_5661d46f949c2a58375f53c90558d055 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_df0170cd1cb6659ddee88368a6afd1ba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bb9ede256eff853b369cd3580db1ddcf = $(`<div id="html_bb9ede256eff853b369cd3580db1ddcf" style="width: 100.0%; height: 100.0%;">At the courthouse square<br>Distância: 85.3 km<br>Avaliação: 3.1</div>`)[0];
+                popup_df0170cd1cb6659ddee88368a6afd1ba.setContent(html_bb9ede256eff853b369cd3580db1ddcf);
+            
+        
+
+        marker_77dbe467fd2d595382c9e951f4610022.bindPopup(popup_df0170cd1cb6659ddee88368a6afd1ba)
+        ;
+
+        
+    
+    
+            marker_77dbe467fd2d595382c9e951f4610022.bindTooltip(
+                `<div>
+                     At the courthouse square
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_77dbe467fd2d595382c9e951f4610022.setIcon(icon_5661d46f949c2a58375f53c90558d055);
+            
+</script>
+</html>
