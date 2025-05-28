@@ -3,59 +3,90 @@ import pandas as pd
 from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
 import numpy as np
+import unicodedata
+import re
 import folium
+
+
+#Def para normalização de texto
+def normalizar(texto: str) -> str:
+    if pd.isna(texto):
+        return ""
+    texto = str(texto).lower().strip()
+    texto = unicodedata.normalize('NFKD', texto)
+    texto = "".join([c for c in texto if not unicodedata.combining(c)])
+    texto = re.sub(r"\s+", " ", texto)
+    return texto
+
+LISTA_PRODUTOS_35 = [
+    "Alface", "Mandioca", "Tomate", "Repolho", "Batata", "Cebola", "Couve", "Chuchu",
+    "Morango", "Pimentão", "Brócolis", "Abóbora", "Berinjela", "Beterraba", "Pepino",
+    "Cenoura", "Quiabo", "Agrião", "Jiló", "Gengibre", "Abacate", "Goiaba", "Banana",
+    "Limão", "Tangerina", "Maracujá", "Manga", "Lichia", "Uva", "Atemóia", "Cajamanga",
+    "Graviola", "Coco", "Pitaia", "Mamão"]
+
+
+LOCALIDADES_EMATER = [
+    "alexandre gusmao", "brazlandia", "ceilandia", "gama", "jardim",
+    "pad-df", "paranoa", "pipiripau", "planaltina", "sao sebastiao",
+    "sobradinho", "tabatinga", "taquara", "vargem bonita" 
+]
+
+LOCALIDADES_EMATER = [normalizar(loc) for loc in LOCALIDADES_EMATER]
 
 
 #1° Etapa: processar e ler os dados
 print("1° Etapa: processando e leitura dos dados")
 print("Importação OK!")
-dados = pd.read_excel("dataprod/produtores.xlsx")
+culturas = pd.read_excel("dataprod/culturas.xlsx")
+localidades = pd.read_excel("dataprod/localidades.up.xlsx")
 print("Leitura OK!")
-print(dados.head(10))
+print()
+print(culturas.head(15))
+print("culturas OK!")
+print()
+print(localidades.head(15))
+print("localidades OK!")
 print()
 
+print("\n2° Etapa: preenchendo localidade nas culturas com ffill()")
+culturas["Localidade / Cultura"] = culturas["Localidade / Cultura"].ffill()
 
-#2° Etapa: refinamento dos dados
-print("2° Etapa: refinando os dados")
+culturas = culturas[~culturas["Localidade / Cultura"].str.contains("subtotal", case=False, na=False)]
+
+print(culturas["Localidade / Cultura"].isna().sum())
+#print(culturas[["Localidade / Cultura", "Localidade / Cultura (ffil)"]].head(20))
+
+#3° Etapa: refinamento dos dados
+print("2° Etapa: refinando os dados da cultura")
 
 # remover linhas com valores vazios
-dados = dados.dropna(subset=["location_x", "location_y", "location_address", "location_desc", "location_site"])
+culturas = culturas.dropna(subset=["Localidade / Cultura", "Área Plantada (hectares)", "Produção (toneladas)"])
 
-# renomear colunas para facilitar a leitura
-dados = dados.rename(columns={
-    "location_x": "longitude",
-    "location_y": "latitude",
-    "location_adress": "endereco",
-    "location_desc": "referencia",
-    "location_site": "localizacao",
-    "location_site_otherdesc": "complemento"
-})
+#Aplicação da função normalizar
+culturas["regiao_norm"] = culturas["Localidade / Cultura"].apply(normalizar)
+localidades["regiao_norm"] = localidades["Região"].apply(normalizar)
 
-# transformar tipos de dados em float
-dados["latitude"] = dados["latitude"].astype(float)
-dados["longitude"] = dados["longitude"].astype(float)
-print("Dados organizados")
+# 4º Merge das coordenadas
+dados = pd.merge(
+    culturas,
+    localidades[["regiao_norm", "latitude", "longitude"]],
+    on="regiao_norm",
+    how="left"
+)
 
-#Revisar os dados
-print(dados.head(10))
-print()
-
-
-#3° Etapa: Geocoordenadas
-print("3° Etapa: Refinando coordenadas geoespaciais")
-#Verificar se os dados tem coordenadas NUMERICAS
+#Verificar e transforma os dados em coordenadas NUMERICAS
 dados["latitude"] = pd.to_numeric(dados["latitude"], errors='coerce')
 dados["longitude"] = pd.to_numeric(dados["longitude"], errors='coerce')
-
 
 #Remove linhas com coordenadas vazias
 dados = dados.dropna(subset=["latitude", "longitude"])
 print("Coordenadas refinadas")
-
+print()
 
 #Confere as linhas com coordenadas numericas
-print(dados[["latitude", "longitude"]].head(10))
-
+print("Linhas com coordenadas númericas:\n")
+print(dados[["Localidade / Cultura", "latitude", "longitude"]].head(10))
 #--------------------------------------------------------------------------------
 # Inicializa o geolocalizador
 geolocator = Nominatim(user_agent="produtores_app")
