@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f27fa34fa8da803445e34030c427eef1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f27fa34fa8da803445e34030c427eef1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f27fa34fa8da803445e34030c427eef1 = L.map(
+                "map_f27fa34fa8da803445e34030c427eef1",
+                {
+                    center: [-15.8173391, -48.1045766],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f75e78ef551999fb97fcf7693e277a79 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f75e78ef551999fb97fcf7693e277a79.addTo(map_f27fa34fa8da803445e34030c427eef1);
+        
+    
+            var marker_4f366ef967ca5abb249cda7ee3e41773 = L.marker(
+                [-15.8173391, -48.1045766],
+                {
+}
+            ).addTo(map_f27fa34fa8da803445e34030c427eef1);
+        
+    
+            var icon_23ce684caa5d9c9c41ec4491a14e0521 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b940771ef008ff56d9268cd01f6d3ead = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a1cd9e70da0c0594a9e6fee91f8d4573 = $(`<div id="html_a1cd9e70da0c0594a9e6fee91f8d4573" style="width: 100.0%; height: 100.0%;">Você está aqui</div>`)[0];
+                popup_b940771ef008ff56d9268cd01f6d3ead.setContent(html_a1cd9e70da0c0594a9e6fee91f8d4573);
+            
+        
+
+        marker_4f366ef967ca5abb249cda7ee3e41773.bindPopup(popup_b940771ef008ff56d9268cd01f6d3ead)
+        ;
+
+        
+    
+    
+            marker_4f366ef967ca5abb249cda7ee3e41773.bindTooltip(
+                `<div>
+                     Sua Localização (Pode ser aproximada)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4f366ef967ca5abb249cda7ee3e41773.setIcon(icon_23ce684caa5d9c9c41ec4491a14e0521);
+            
+    
+            var marker_c75dffd8f02963a1da3e5ff1f52cc168 = L.marker(
+                [-15.8344, -48.0556],
+                {
+}
+            ).addTo(map_f27fa34fa8da803445e34030c427eef1);
+        
+    
+            var icon_3ce94d2f73b56db24f1e9170badf9419 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_49b669fe9982a285f4413c618295d269 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_04f345687ddc3addcfac2cc41170123f = $(`<div id="html_04f345687ddc3addcfac2cc41170123f" style="width: 100.0%; height: 100.0%;"><b>Super Maia - Taguatinga</b><br>Tipo: Supermercado<br>Endereço: QND 27 - Taguatinga, Brasília<br>Distância: 5.6 km<br>Avaliação: 1/5<br><i>Oferece Orgânicos</i><br>Produtos (amostra): Goiaba,  Banana,  Cajamanga...</div>`)[0];
+                popup_49b669fe9982a285f4413c618295d269.setContent(html_04f345687ddc3addcfac2cc41170123f);
+            
+        
+
+        marker_c75dffd8f02963a1da3e5ff1f52cc168.bindPopup(popup_49b669fe9982a285f4413c618295d269)
+        ;
+
+        
+    
+    
+            marker_c75dffd8f02963a1da3e5ff1f52cc168.bindTooltip(
+                `<div>
+                     Super Maia - Taguatinga (Supermercado) - Avaliação: 1/5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c75dffd8f02963a1da3e5ff1f52cc168.setIcon(icon_3ce94d2f73b56db24f1e9170badf9419);
+            
+    
+            var marker_a13a68512611a348e0027fca9338ee75 = L.marker(
+                [-15.8694, -48.0775],
+                {
+}
+            ).addTo(map_f27fa34fa8da803445e34030c427eef1);
+        
+    
+            var icon_c15cbac019026a0a6374d33c4f5ecab0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_efcca6aa90b69b64708c4aa9bb4f4168 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9aa716b0a11237f03b632b3270092c9 = $(`<div id="html_b9aa716b0a11237f03b632b3270092c9" style="width: 100.0%; height: 100.0%;"><b>Feira do Produtor de Samambaia</b><br>Tipo: Feira/Mercado do Produtor<br>Endereço: QN 303, Área Especial - Samambaia<br>Distância: 6.4 km<br>Avaliação: 3/5<br><i>Oferece Orgânicos</i><br>Produtos (amostra): Tangerina,  Graviola,  Banana...</div>`)[0];
+                popup_efcca6aa90b69b64708c4aa9bb4f4168.setContent(html_b9aa716b0a11237f03b632b3270092c9);
+            
+        
+
+        marker_a13a68512611a348e0027fca9338ee75.bindPopup(popup_efcca6aa90b69b64708c4aa9bb4f4168)
+        ;
+
+        
+    
+    
+            marker_a13a68512611a348e0027fca9338ee75.bindTooltip(
+                `<div>
+                     Feira do Produtor de Samambaia (Feira/Mercado do Produtor) - Avaliação: 3/5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a13a68512611a348e0027fca9338ee75.setIcon(icon_c15cbac019026a0a6374d33c4f5ecab0);
+            
+    
+            var marker_2798128bd3e3d91de64dc3b0d94714ad = L.marker(
+                [-15.8042, -48.0181],
+                {
+}
+            ).addTo(map_f27fa34fa8da803445e34030c427eef1);
+        
+    
+            var icon_3a470421e674a4685adca3a1f3ff2214 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c004df868f09f217e58ae9773d739f17 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_20132ad797772371645e7a8f06461339 = $(`<div id="html_20132ad797772371645e7a8f06461339" style="width: 100.0%; height: 100.0%;"><b>Feira do Produtor de Vicente Pires</b><br>Tipo: Feira/Mercado do Produtor<br>Endereço: Rua 4, Área Especial - Vicente Pires<br>Distância: 9.4 km<br>Avaliação: 1/5<br><i>Oferece Orgânicos</i><br>Produtos (amostra): Mamão,  Manga,  Quiabo...</div>`)[0];
+                popup_c004df868f09f217e58ae9773d739f17.setContent(html_20132ad797772371645e7a8f06461339);
+            
+        
+
+        marker_2798128bd3e3d91de64dc3b0d94714ad.bindPopup(popup_c004df868f09f217e58ae9773d739f17)
+        ;
+
+        
+    
+    
+            marker_2798128bd3e3d91de64dc3b0d94714ad.bindTooltip(
+                `<div>
+                     Feira do Produtor de Vicente Pires (Feira/Mercado do Produtor) - Avaliação: 1/5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2798128bd3e3d91de64dc3b0d94714ad.setIcon(icon_3a470421e674a4685adca3a1f3ff2214);
+            
+    
+            var marker_c3cb52eba62721942585d86a7f58653e = L.marker(
+                [-15.9025, -48.0625],
+                {
+}
+            ).addTo(map_f27fa34fa8da803445e34030c427eef1);
+        
+    
+            var icon_69266805386a2db5c94141b8a98a23b3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_767768413934014d3c137b99010e2883 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_96429c9fc98c053ef59fe9ae30f643e5 = $(`<div id="html_96429c9fc98c053ef59fe9ae30f643e5" style="width: 100.0%; height: 100.0%;"><b>Feira do Produtor do Recanto das Emas</b><br>Tipo: Feira/Mercado do Produtor<br>Endereço: Quadra 205, Área Especial - Recanto das Emas<br>Distância: 10.4 km<br>Avaliação: 4/5<br><i>Oferece Orgânicos</i><br>Produtos (amostra): Limão,  Repolho,  Goiaba...</div>`)[0];
+                popup_767768413934014d3c137b99010e2883.setContent(html_96429c9fc98c053ef59fe9ae30f643e5);
+            
+        
+
+        marker_c3cb52eba62721942585d86a7f58653e.bindPopup(popup_767768413934014d3c137b99010e2883)
+        ;
+
+        
+    
+    
+            marker_c3cb52eba62721942585d86a7f58653e.bindTooltip(
+                `<div>
+                     Feira do Produtor do Recanto das Emas (Feira/Mercado do Produtor) - Avaliação: 4/5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c3cb52eba62721942585d86a7f58653e.setIcon(icon_69266805386a2db5c94141b8a98a23b3);
+            
+    
+            var marker_ed8ebc46531dda5ae35935330419274b = L.marker(
+                [-16.0192, -48.0653],
+                {
+}
+            ).addTo(map_f27fa34fa8da803445e34030c427eef1);
+        
+    
+            var icon_d2e393d396fb097c81cdde1d23ce568c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f8fc5a3d6e6018f2b4108ad181ae06fd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fce349cec08654f8c04a62ba54ee5ece = $(`<div id="html_fce349cec08654f8c04a62ba54ee5ece" style="width: 100.0%; height: 100.0%;"><b>Associação dos Produtores de Hortigranjeiros do Distrito Federal (Asphor)</b><br>Tipo: Associação/Cooperativa<br>Endereço: Sede na região de Gama, Santa Maria, Plano Piloto<br>Distância: 22.7 km<br>Avaliação: 1/5<br><i>Oferece Orgânicos</i><br>Produtos (amostra): Jiló,  Goiaba,  Brócolis...</div>`)[0];
+                popup_f8fc5a3d6e6018f2b4108ad181ae06fd.setContent(html_fce349cec08654f8c04a62ba54ee5ece);
+            
+        
+
+        marker_ed8ebc46531dda5ae35935330419274b.bindPopup(popup_f8fc5a3d6e6018f2b4108ad181ae06fd)
+        ;
+
+        
+    
+    
+            marker_ed8ebc46531dda5ae35935330419274b.bindTooltip(
+                `<div>
+                     Associação dos Produtores de Hortigranjeiros do Distrito Federal (Asphor) (Associação/Cooperativa) - Avaliação: 1/5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ed8ebc46531dda5ae35935330419274b.setIcon(icon_d2e393d396fb097c81cdde1d23ce568c);
+            
+</script>
+</html>
